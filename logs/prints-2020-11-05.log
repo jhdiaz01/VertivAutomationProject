@@ -1,0 +1,5 @@
+23:35:08.801 [main] TRACE pageTest.NavigateResourcesColumnTest -  | is loaded successfully.
+14:27:17.475 [main] INFO  pageTest.NavigateResourcesColumnTest - Browser is initialized.
+14:27:39.113 [main] INFO  pageTest.NavigateResourcesColumnTest - Navigated to Vertiv page.
+14:27:44.361 [main] TRACE pageTest.NavigateResourcesColumnTest - Vertiv - Official Web Site | is loaded successfully.
+14:27:55.302 [main] TRACE pageTest.NavigateResourcesColumnTest - Vertiv (@vertiv) • Instagram photos and videos | is loaded successfully.

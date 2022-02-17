@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Vertiv]" parallel="classes">
+  <listeners>
+    <listener class-name="resources.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="VertivTest(failed)" parallel="tests">
+    <classes>
+      <class name="pageTest.CreateConsultantTest">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="createConsultant"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- pageTest.CreateConsultantTest -->
+      <class name="pageTest.CreateGeneralTest">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="createGeneralUser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- pageTest.CreateGeneralTest -->
+    </classes>
+  </test> <!-- VertivTest(failed) -->
+</suite> <!-- Failed suite [Vertiv] -->

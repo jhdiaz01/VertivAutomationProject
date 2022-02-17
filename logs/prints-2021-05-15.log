@@ -1,0 +1,5 @@
+13:09:35.200 [main] INFO  pageTest.NavigateResourcesColumnTest - Browser is initialized.
+13:09:50.565 [main] INFO  pageTest.NavigateResourcesColumnTest - Navigated to Vertiv page.
+13:39:09.249 [main] INFO  pageTest.NavigateBrandLandingPagesTest - Vertiv - Official Web Site | is loaded successfully.
+13:39:20.697 [main] INFO  pageTest.NavigateBrandLandingPagesTest - DC Power Systems from NetSure | Vertiv Data Center Solutions | is loaded successfully.
+13:39:22.853 [main] INFO  pageTest.NavigateBrandLandingPagesTest - IT Environment Solutions by Liebert | Vertiv Brands | is loaded successfully.

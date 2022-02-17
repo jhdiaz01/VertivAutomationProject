@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Suite" parallel="tests" thread-count="6">
+
+<listeners>
+<listener class-name="resources.Listeners"/>
+</listeners>
+
+ 
+   <test name="Validate eloqua form submission.">
+    <classes>
+      <class name="pageTest.EloquaFormTest"/>
+    </classes>
+  </test>
+  
+     <test name="Validate General login.">
+    <classes>
+      <class name="pageTest.GeneralLoginTest"/>
+    </classes>
+  </test>
+  
+    <test name="Validate Consultant login.">
+    <classes>
+      <class name="pageTest.ConsultantLoginTest"/>
+    </classes>
+  </test> 
+  
+      <test name="Validate General account creation.">
+    <classes>
+      <class name="pageTest.CreateGeneralTest"/>
+    </classes>
+  </test>
+  
+      <test name="Validate Consultant account creation.">
+    <classes>
+      <class name="pageTest.CreateConsultantTest"/>
+    </classes>
+  </test>
+
+  
+</suite> <!-- Suite -->
