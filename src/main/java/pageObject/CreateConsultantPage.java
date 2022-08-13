@@ -1,5 +1,7 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -108,7 +110,7 @@ public class CreateConsultantPage {
 	}	
 	
 	public void selectPrefix() {
-		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
 		Select prefix = new Select(driver.findElement(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
 		prefix.selectByValue("Mr.");
 	}
@@ -151,7 +153,7 @@ public class CreateConsultantPage {
 	public void clickNextStep() {
 		
 		try {
-			new WebDriverWait(driver, 5000).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='next-step button primary']")));
+			new WebDriverWait(driver, Duration.ofSeconds(5)).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='next-step button primary']")));
 			driver.findElement(By.xpath("//button[@class='next-step button primary']")).click();
 		}
 		catch(Exception e) {
@@ -161,7 +163,7 @@ public class CreateConsultantPage {
 	
 	public void notARobot() {
 		try	{
-			new WebDriverWait(driver, 5000).until(ExpectedConditions.elementToBeClickable(notRobot));
+			new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(notRobot));
 			notRobot.click();
 		}
 		catch (org.openqa.selenium.ElementClickInterceptedException e) {

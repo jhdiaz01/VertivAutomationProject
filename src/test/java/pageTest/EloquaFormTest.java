@@ -32,6 +32,7 @@ public class EloquaFormTest extends Base {
 		
 		efp.scrollDown();
 		
+		efp.clickAcceptBtn();
 		efp.enter_firstName().sendKeys(firstname);
 		efp.enter_lastName().sendKeys(lastname);
 		efp.enter_email().sendKeys(email);
@@ -80,10 +81,10 @@ public class EloquaFormTest extends Base {
 		eat.enter_lastName().sendKeys(lastname);
 		eat.enter_email().sendKeys(email);
 		eat.enter_phoneNumber().sendKeys(phonenumber);
-		eat.enter_company().sendKeys(company);
+		eat.enter_company().sendKeys(company);	
 		eat.uploadFile().sendKeys(sampleFile);
 		eat.tick_gdrpConsent();
-		eat.click_submit().click();
+		eat.click_submit();
 		
 		eat.check_submission_status();
 	}
@@ -96,7 +97,7 @@ public class EloquaFormTest extends Base {
 		data[0][2] = "marshall.mosby@yopmail.com";
 		data[0][3] = "9827163";
 		data[0][4] = "Warner Bro.";
-		data[0][5] = "C:\\HeatRejectionTestProduct.docx";
+		data[0][5] = "C:\\TestAsset.pdf";
 		
 		return data;
 	}

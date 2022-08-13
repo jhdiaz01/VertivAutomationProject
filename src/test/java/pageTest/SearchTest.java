@@ -22,6 +22,7 @@ public class SearchTest extends Base {
 	public void search(String keyword) {
 		HomePage home = new HomePage(driver);
 		
+		
 		home.search_icon().click();
 		home.search_field().sendKeys(keyword);
 		home.search_icon().click();

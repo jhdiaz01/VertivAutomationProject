@@ -46,7 +46,19 @@ public class HomePage {
 //		Select country_dropdown = new Select(country_drop);
 	
 
+	@FindBy(css="#languageSwitch > form.select-lang.geo-diff.ng-pristine.ng-valid > div.col-xs-12.center-content > button")
+	WebElement proceed;
 	
+	public WebElement proceedBtn() {
+		
+		if(proceed.isDisplayed()) {
+			proceed.click();
+		}
+		
+		
+		
+		return proceed;
+	}
 	
 		
 		

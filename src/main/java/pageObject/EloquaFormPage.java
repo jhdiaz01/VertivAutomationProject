@@ -55,11 +55,14 @@ public class EloquaFormPage extends Base {
 	@FindBy(css="#Submit")
 	WebElement submit;
 	
-	@FindBy(css="#fileUploadPath_FileUrl")
+	@FindBy(xpath="//input[@id='FileUrl']")
 	WebElement upload;
 	
 	@FindBy (xpath="/html/body/article[1]/section[1]/header/div[2]/article/div[1]/div[2]")
 	WebElement desktopnandropdown;
+	
+	@FindBy (css="#cookiesAcceptButton")
+	WebElement acceptBtn;
 	
 
 	public WebElement desktop_nav_dropdown() throws InterruptedException {
@@ -113,7 +116,7 @@ public class EloquaFormPage extends Base {
 		select.selectByValue("006");  //Select 'Friday' as day.
 	}
 	
-	public void tick_gdrpConsent() {	
+	public void tick_gdrpConsent() throws InterruptedException {	
 		Actions act =  new Actions(driver);
 		try {
 		act.moveToElement(driver.findElement(By.cssSelector("#gDPRMarketingCompliant1"))).click().perform();
@@ -121,14 +124,20 @@ public class EloquaFormPage extends Base {
 		catch (Exception e) {
 			LOGGER.debug(e);
 		}
+		Thread.sleep(3L);
 	}
 	
-	public WebElement click_submit() {	
-		submit.click();
-		return submit;
+	public void click_submit() {
+		WebElement element = driver.findElement(By.cssSelector("#Submit"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).click().build().perform();
+		
+	//	return submit;
 	}
 	
 	public WebElement uploadFile() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('FileUrl').removeAttribute('readonly')");
 		return upload;
 	}
 	
@@ -138,7 +147,7 @@ public class EloquaFormPage extends Base {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get(eloqua_form_url);
-		Thread.sleep(3000L);
+		
 		} catch (Exception e) {
 			LOGGER.debug(e);
 		}
@@ -176,5 +185,9 @@ public class EloquaFormPage extends Base {
 		    System.out.println("Error: Form submission did not proceed.");
 			};
 		
+	}
+	
+	public void clickAcceptBtn() {
+		acceptBtn.click();
 	}
 }

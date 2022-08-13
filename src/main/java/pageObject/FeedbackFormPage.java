@@ -1,5 +1,7 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -49,49 +51,49 @@ public class FeedbackFormPage {
 	}
 	
 	public void select_salutation() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		Select sel = new Select(wait.until(ExpectedConditions.visibilityOf((driver.findElement(By.cssSelector("#ddlSendEmailModel\\.Title"))))));
 		sel.selectByValue("Engr.");
 	}
 	
 	public WebElement enter_firstName() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(firstName));
 		return firstName;
 	}
 	
 	public WebElement enter_lastName() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#SendEmailModel_LastName")));
 		return lastName;
 	}
 	
 	public WebElement enter_email() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#SendEmailModel_EmailAddress")));
 		return email;
 	}
 	
 	public WebElement enter_confirmEmail() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(confirmEmail));
 		return confirmEmail;
 	}
 	
 	public void select_country() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		Select sel = new Select(wait.until(ExpectedConditions.visibilityOf((driver.findElement(By.cssSelector("#SendEmailModel_CountryCode"))))));
 		sel.selectByValue("USA");
 	}
 	
 	public WebElement enter_subject() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(subjectLine));
 		return subjectLine;
 	}
 	
 	public WebElement enter_message() {
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(message));
 		return message;
 	}

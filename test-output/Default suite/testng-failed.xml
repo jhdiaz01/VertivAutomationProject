@@ -5,8 +5,8 @@
     <classes>
       <class name="pageTest.GeneralLoginTest">
         <methods>
-          <include name="tearDown"/>
           <include name="initializeBrowser"/>
+          <include name="tearDown"/>
           <include name="generalLogin" invocation-numbers="0"/>
         </methods>
       </class> <!-- pageTest.GeneralLoginTest -->

@@ -1,5 +1,7 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -91,7 +93,7 @@ public class CreateGeneralPage {
 	}	
 	
 	public void selectPrefix() {
-		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
 		Select prefix = new Select(driver.findElement(By.xpath("//select[@id='CreateAccountModel_Prefix']")));
 		prefix.selectByValue("Mr.");
 	}

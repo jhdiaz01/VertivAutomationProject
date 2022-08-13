@@ -16,6 +16,7 @@ public class FeedbackFormTest extends Base {
 	@BeforeTest
 	private void initializeBrowser() throws IOException {
 		driver = initializeDriver();
+		driver.get(VertivURL);
 
 	}
 	

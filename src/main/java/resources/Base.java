@@ -26,6 +26,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObject.HomePage;
@@ -43,22 +44,27 @@ public class Base {
 	public WebDriver initializeDriver() throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(
-				"C:\\workspace\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
+				"C:\\git\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
 				
 		System.out.println("Initialize " + browserName);
 
 		if (browserName.equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\workspace\\VertivAutomationProject\\webdriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\git\\VertivAutomationProject\\webdriver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 		} else if (browserName.equals("Firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\workspace\\webDriver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\git\\VertivAutomationProject\\webdriver\\geckodriver.exe");
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
+		} else if (browserName.equals("chromeBeta")) {
+			ChromeOptions optionsBeta = new ChromeOptions();
+			optionsBeta.setBinary("C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\git\\VertivAutomationProject\\webdriver\\chromedriver.exe");
+			driver = new ChromeDriver(optionsBeta);
 		}
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -85,11 +91,11 @@ public class Base {
 		Properties prop = new Properties(); // This code is used to establish a connection from data.properties to Base
 											// class (for test data setup)
 		FileInputStream fis2 = new FileInputStream(
-				"C:\\workspace\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
+				"C:\\git\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
 		prop.load(fis2);
 
 		FileInputStream fis = new FileInputStream(
-				"C:\\workspace\\VertivAutomationProject\\src\\main\\java\\resources\\testdata.xlsx");
+				"C:\\git\\VertivAutomationProject\\src\\main\\java\\resources\\testdata.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
 		int sheets = workbook.getNumberOfSheets();
@@ -159,11 +165,11 @@ public class Base {
 		Properties prop = new Properties(); // This code is used to establish a connection from data.properties to Base
 											// class (for test data setup)
 		FileInputStream fis2 = new FileInputStream(
-				"C:\\workspace\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
+				"C:\\git\\VertivAutomationProject\\src\\main\\java\\resources\\data.properties");
 		prop.load(fis2);
 
 		FileInputStream fis = new FileInputStream(
-				"C:\\workspace\\VertivAutomationProject\\src\\main\\java\\resources\\testdata.xlsx");
+				"C:\\git\\VertivAutomationProject\\src\\main\\java\\resources\\testdata.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
 		int sheets = workbook.getNumberOfSheets();
