@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -64,6 +65,16 @@ public class HomePage {
 		
 	@FindBy(xpath="//*[@id=\"languageSwitch\"]/form[1]/button")
 	WebElement saveBtn;
+	
+	
+	@FindBy(css="#cookiesOptInBannerDiv")
+	WebElement cookieBanner;
+	
+	public WebElement hideBanner() {
+		JavascriptExecutor js = (JavascriptExecutor)(driver);
+		js.executeScript("document.getElementById('cookiesOptInBannerDiv').removeAttribute('cookiesOptInBanner')");
+		return cookieBanner;
+	}
 	
 	public WebElement save_button() {
 		return saveBtn;

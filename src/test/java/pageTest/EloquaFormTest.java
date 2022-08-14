@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObject.EloquaFormPage;
+import pageObject.HomePage;
 import resources.Base;
 
 public class EloquaFormTest extends Base {
@@ -29,7 +30,7 @@ public class EloquaFormTest extends Base {
 										) throws InterruptedException {
 		
 		EloquaFormPage efp = new EloquaFormPage(driver);
-		
+				
 		efp.scrollDown();
 		
 		efp.clickAcceptBtn();
