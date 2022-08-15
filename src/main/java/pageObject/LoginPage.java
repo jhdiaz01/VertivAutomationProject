@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -139,11 +140,8 @@ public class LoginPage {
 	@FindBy(xpath="//button[@class='button primary log-in']")
 	WebElement submitBtn;
 	
-	@FindBy(xpath="/html/body/article[1]/section[1]/header/div[2]/article/div[1]/div[2]/div/div/a[1]")
-	WebElement genDash;
-	
 	@FindBy(xpath="/html/body/article[1]/section[1]/header/div[2]/article/div[1]/div[3]/div/div/a[1]")
-	WebElement conDash;
+	WebElement dash;
 		
 	
 	public WebElement loginUsername() {
@@ -158,13 +156,26 @@ public class LoginPage {
 		return submitBtn;
 	}
 	
-	public WebElement generalDashboard() {
-		return genDash;
+	public WebElement dashboard() {
+		return dash;
 	}
 	
-	public WebElement consultantDashboard() {
-		return conDash;
-	}
+	
+	/*
+	public boolean clickDashboard() {
+		boolean result = false;
+		int attempts = 0;
+		while(attempts < 2) {
+			try {
+				driver.findElement(By.xpath("/html/body/article[1]/section[1]/header/div[2]/article/div[1]/div[3]/div/div/a[1]"));
+				result = true;
+				break;
+			} catch(StaleElementReferenceException e) {
+				attempts++;
+			}
+		}
+		return result;
+	} */
 	
 	
 	public void check_loginStatus_general() {

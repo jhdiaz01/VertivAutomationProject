@@ -15,7 +15,7 @@ public class GeneralLoginTest extends Base {
 	public void initializeBrowser() throws IOException {
 
 		driver = initializeDriver();
-		driver.get(VertivPrep);
+		driver.get(VertivURL);
 	}
 
 	
@@ -35,7 +35,7 @@ public class GeneralLoginTest extends Base {
 		Thread.sleep(3000L);
 			
 		glp.MyAcctLog().click();
-		glp.generalDashboard().click();
+		glp.dashboard().click();
 		glp.check_loginStatus_general();
 		
 		//Logout
@@ -48,8 +48,8 @@ public class GeneralLoginTest extends Base {
 	//Data for General user.
 	public Object[][] generalData() {
 		Object[][] data = new Object[1][2];
-				data[0][0]="qa.gen.prep@yopmail.com";
-				data[0][1]="Vertiv2021";
+				data[0][0]="qa.gen.prod@yopmail.com";
+				data[0][1]="Vertiv2022";
 				
 				return data;
 	}	

@@ -34,7 +34,7 @@ import pageObject.HomePage;
 public class Base {
 	private static Logger LOGGER = LogManager.getLogger(HomePage.class.getName());
 	
-	public final static String VertivURL = "https://www.vertiv.com/en-us/";
+	public final static String VertivURL = "https://www.vertiv.com/en-asia/";
 	public final static String VertivPrep = "https://prep.vertiv.com/";
 	public final static String eloqua_form_url = "https://www.vertiv.com/en-asia/testing-area/qa-validation/eloqua-forms-for-testing/automation-eloqua-form-test-page/";
 	public final static String eloqua_form_url2 = "https://www.vertiv.com/en-asia/testing-area/qa-validation/eloqua-forms-for-testing/automation-eloqua-form-test-page2/";

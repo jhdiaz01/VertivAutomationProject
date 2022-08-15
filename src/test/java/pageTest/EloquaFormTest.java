@@ -109,5 +109,4 @@ public class EloquaFormTest extends Base {
 		driver.manage().deleteAllCookies();
 		driver.quit();
 	}
-	
 }

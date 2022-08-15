@@ -35,7 +35,7 @@ public class ConsultantLoginTest extends Base {
 		Thread.sleep(3000L);
 		
 		clp.MyAcctLog().click();
-		clp.consultantDashboard().click();
+		clp.dashboard().click();
 		clp.check_loginStatus_consultant();
 		
 		//Logout
